@@ -1,8 +1,19 @@
-// Import Views
-const adminUsers = () => import('../assets/views/index/adminLogin.vue')
+import { createRouter, createWebHistory } from 'vue-router'
 
-export default [
-    // Admin
-    { path: '/login/', name: 'login', component: adminUsers},
-
+const routes = [
+  {
+    path: '/login',
+    name: 'login',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "about" */ '../views/index/AdminLogin.vue')
+  }
 ]
+
+const router = createRouter({
+  history: createWebHistory(process.env.BASE_URL),
+  routes
+})
+
+export default router

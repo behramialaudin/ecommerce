@@ -1,21 +1,20 @@
 <template>
+  <div id="app">
 
-<h1>qaa</h1>
+    <router-view/>
+  </div>
 </template>
 
 <script>
-
 export default {
-  name: 'App',
-  metaInfo () {
-    return {
-        title: this.$appName,
-        titleTemplate: `%s - ` + this.$appName
+        data() {
+        return {
+        }
+    },
+    mounted(){
+      this.$router.push({name: 'login'})
     }
-},
-  mounted(){
 
-  }
 }
 </script>
 
@@ -26,6 +25,5 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
